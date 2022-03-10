@@ -24,7 +24,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -84,10 +83,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../why_ivy.html">Why Ivy?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../using_ivy.html">Using Ivy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../training_a_network.html">Training a Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">Contributing to Ivy</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Array</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../array/array_mode_handler.html">Array mode handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../array/array_api.html">Array api</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../array/conversions.html">Conversions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../array/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../array/general.html">General</a></li>
@@ -100,14 +100,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../array/random.html">Random</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../array/reductions.html">Reductions</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Graph compiler</span></p>
+<p class="caption"><span class="caption-text">Functional</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/compiler.html">Compiler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/globals.html">Globals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/graph.html">Graph</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/helpers.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/op_logging.html">Op logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../graph_compiler/param.html">Param</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../backends.html">Backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ivy.html">Ivy</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Stateful</span></p>
 <ul>
@@ -197,38 +193,11 @@
             
   <div class="section" id="reptile-step">
 <h1>reptile_step<a class="headerlink" href="#reptile-step" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="ivy.functional.ivy.core.meta.reptile_step">
-<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">reptile_step</code><span class="sig-paren">(</span><em class="sig-param">batch</em>, <em class="sig-param">cost_fn</em>, <em class="sig-param">variables</em>, <em class="sig-param">inner_grad_steps</em>, <em class="sig-param">inner_learning_rate</em>, <em class="sig-param">inner_optimization_step=&lt;function gradient_descent_update&gt;</em>, <em class="sig-param">batched=True</em>, <em class="sig-param">return_inner_v=False</em>, <em class="sig-param">num_tasks=None</em>, <em class="sig-param">stop_gradients=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/functional/ivy/core/meta.html#reptile_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.core.meta.reptile_step" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform step of Reptile.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>batch</strong> (<em>ivy.Container</em>) – The input batch</p></li>
-<li><p><strong>cost_fn</strong> (<em>callable</em>) – callable for the cost function, receivng the task-specific sub-batch and variables</p></li>
-<li><p><strong>variables</strong> (<em>ivy.Container</em>) – Variables to be optimized</p></li>
-<li><p><strong>inner_grad_steps</strong> (<em>int</em>) – Number of gradient steps to perform during the inner loop.</p></li>
-<li><p><strong>inner_learning_rate</strong> (<em>float</em>) – The learning rate of the inner loop.</p></li>
-<li><p><strong>inner_optimization_step</strong> (<em>callable</em><em>, </em><em>optional</em>) – The function used for the inner loop optimization.
-Default is ivy.gradient_descent_update.</p></li>
-<li><p><strong>batched</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to batch along the time dimension, and run the meta steps in batch. Default is True.</p></li>
-<li><p><strong>return_inner_v</strong> (<em>str</em><em>, </em><em>optional</em>) – Either ‘first’, ‘all’, or False. ‘first’ means the variables for the first task inner loop
-will also be returned. variables for all tasks will be returned with ‘all’. Default is False.</p></li>
-<li><p><strong>num_tasks</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of unique tasks to inner-loop optimize for the meta step. Determined from batch by default.</p></li>
-<li><p><strong>stop_gradients</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to stop the gradients of the cost. Default is True.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The cost and the gradients with respect to the outer loop variables.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><strong>Supported Frameworks:</strong></div>
 </div>
-<p><a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://jax.readthedocs.io"><img alt="jax_logo" src="../../../../_images/jax_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://www.tensorflow.org"><img alt="tf_logo" src="../../../../_images/tensorflow_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://pytorch.org"><img alt="pytorch_logo" src="../../../../_images/pytorch_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://mxnet.apache.org"><img alt="mxnet_logo" src="../../../../_images/mxnet_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://numpy.org"><img alt="numpy_logo" src="../../../../_images/numpy_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty.png"><img alt="empty" src="../../../../_images/empty.png" style="width: 4%;" /></a></p>
+<p><a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a> <a class="reference external" href="https://jax.readthedocs.io"><img alt="jax_logo" src="../../../../_images/jax_logo1.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a> <a class="reference external" href="https://www.tensorflow.org"><img alt="tf_logo" src="../../../../_images/tensorflow_logo1.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a> <a class="reference external" href="https://pytorch.org"><img alt="pytorch_logo" src="../../../../_images/pytorch_logo1.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a> <a class="reference external" href="https://mxnet.apache.org"><img alt="mxnet_logo" src="../../../../_images/mxnet_logo1.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a> <a class="reference external" href="https://numpy.org"><img alt="numpy_logo" src="../../../../_images/numpy_logo1.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../../_images/empty1.png"><img alt="empty" src="../../../../_images/empty1.png" style="width: 4%;" /></a></p>
 </div>
 
 
