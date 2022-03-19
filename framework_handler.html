@@ -85,25 +85,33 @@
 <li class="toctree-l1"><a class="reference internal" href="training_a_network.html">Training a Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Ivy</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Array</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="array/array_api.html">Array api</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/conversions.html">Conversions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/device.html">Device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/general.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/gradients.html">Gradients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/image.html">Image</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/linalg.html">Linalg</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/logic.html">Logic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/math.html">Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/meta.html">Meta</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/random.html">Random</a></li>
-<li class="toctree-l1"><a class="reference internal" href="array/reductions.html">Reductions</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Functional</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="functional/backends.html">Backends</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functional/ivy.html">Ivy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/array_api.html">Array api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/core.html">Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/compilation.html">Compilation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/creation.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/data_type.html">Data type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/general.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/linear_algebra.html">Linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/losses.html">Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/manipulation.html">Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/meta.html">Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/nest.html">Nest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/random.html">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/searching.html">Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/statistical.html">Statistical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional/ivy/utility.html">Utility</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Stateful</span></p>
 <ul>
@@ -191,76 +199,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-ivy.framework_handler">
-<span id="framework-handler"></span><h1>Framework handler<a class="headerlink" href="#module-ivy.framework_handler" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="ivy.framework_handler.ContextManager">
-<em class="property">class </em><code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">ContextManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#ContextManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.ContextManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="ivy.framework_handler.ContextManager.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#ContextManager.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.ContextManager.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.choose_random_framework">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">choose_random_framework</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">excluded</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#choose_random_framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.choose_random_framework" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.clear_framework_stack">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">clear_framework_stack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#clear_framework_stack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.clear_framework_stack" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.current_framework">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">current_framework</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#current_framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.current_framework" title="Permalink to this definition">¶</a></dt>
-<dd><p>Priorities: global_framework &gt; argument’s framework.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.get_framework">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">get_framework</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#get_framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.get_framework" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.set_framework">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">set_framework</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#set_framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.set_framework" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.try_import_ivy_jax">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">try_import_ivy_jax</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#try_import_ivy_jax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.try_import_ivy_jax" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.try_import_ivy_mxnet">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">try_import_ivy_mxnet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#try_import_ivy_mxnet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.try_import_ivy_mxnet" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.try_import_ivy_numpy">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">try_import_ivy_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#try_import_ivy_numpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.try_import_ivy_numpy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.try_import_ivy_tf">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">try_import_ivy_tf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#try_import_ivy_tf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.try_import_ivy_tf" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.try_import_ivy_torch">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">try_import_ivy_torch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">warn</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#try_import_ivy_torch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.try_import_ivy_torch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="ivy.framework_handler.unset_framework">
-<code class="sig-prename descclassname">ivy.framework_handler.</code><code class="sig-name descname">unset_framework</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ivy/framework_handler.html#unset_framework"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.framework_handler.unset_framework" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+  <div class="section" id="framework-handler">
+<h1>Framework handler<a class="headerlink" href="#framework-handler" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Framework handler</span></p>
 <ul>
